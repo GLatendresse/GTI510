@@ -33,6 +33,12 @@
         controller: 'HomeController',
         controllerAs: 'vm'
       })
+      .state('balle-de-golf', {
+        url: '/balledegolf',
+        templateUrl: '/modules/core/client/views/balledegolf.client.view.html',
+        controller: 'HomeController',
+        controllerAs: 'vm'
+      })
       .state('not-found', {
         url: '/not-found',
         templateUrl: '/modules/core/client/views/404.client.view.html',

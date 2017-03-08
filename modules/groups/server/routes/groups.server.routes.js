@@ -14,7 +14,7 @@ module.exports = function (app) {
 
   // Single group routes
   app.route('/api/groups/:groupId').all(groupsPolicy.isAllowed)
-    .get(groups.read)
+    .get(groups.groupByID)
     .put(groups.update)
     .delete(groups.delete);
 

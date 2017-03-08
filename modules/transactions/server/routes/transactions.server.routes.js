@@ -14,7 +14,7 @@ module.exports = function (app) {
 
   // Single transaction routes
   app.route('/api/transactions/:transactionId').all(transactionsPolicy.isAllowed)
-    .get(transactions.read)
+    .get(transactions.transactionByID)
     .put(transactions.update)
     .delete(transactions.delete);
 
