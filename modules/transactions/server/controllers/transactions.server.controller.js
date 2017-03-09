@@ -33,6 +33,7 @@ exports.update = function (req, res) {
 
   transaction.amount = req.body.amount;
   transaction.userId = req.body.userId;
+  transaction.refundedUserId = req.body.refundedUserId;
   transaction.groupId = req.body.groupId;
 
   transaction.save(function (err) {
