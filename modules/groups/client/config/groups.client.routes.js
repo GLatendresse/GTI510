@@ -9,8 +9,13 @@
 
   function routeConfig($stateProvider) {
     $stateProvider
+      .state('groups', {
+        abstract: true,
+        url: '',
+        template: '<ui-view/>'
+      })
       .state('groups.create', {
-        url: 'creategroup',
+        url: '/creategroup',
         templateUrl: '/modules/groups/client/views/create-group.client.view.html',
         controller: 'CreateGroupController',
         controllerAs: 'vm'
