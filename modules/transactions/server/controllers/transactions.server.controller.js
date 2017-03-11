@@ -32,6 +32,7 @@ exports.update = function (req, res) {
   var transaction = req.transaction;
 
   transaction.amount = req.body.amount;
+  transaction.name = req.body.name;
   transaction.userId = req.body.userId;
   transaction.refundedUserId = req.body.refundedUserId;
   transaction.groupId = req.body.groupId;

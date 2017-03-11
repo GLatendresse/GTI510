@@ -11,6 +11,7 @@ var mongoose = require('mongoose'),
  */
 var TransactionSchema = new Schema({
   amount: Number,
+  name: String,
   userId: Schema.Types.ObjectId,
   refundedUserId: Schema.Types.ObjectId,
   groupId: Schema.Types.ObjectId

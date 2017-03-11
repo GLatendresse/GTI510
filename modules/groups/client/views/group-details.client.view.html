@@ -1,0 +1,27 @@
+<h1>{{vm.group.name}}</h1>
+
+<h3>Membres</h3>
+<div class="list-group">
+  <a ng-repeat="user in vm.users">
+    <div class="list-group-item">
+      <h4 class="list-group-item-heading" ng-bind="user.username"></h4>
+      20 $
+      <p class="list-group-item-text pull-right small" ng-bind="user.email"></p>
+      <button class="btn btn-primary" ng-click="vm.refund(user)">Rembourser</button>
+    </div>
+  </a>
+</div>
+<h3>Ajouter une nouvelle dépense</h3>
+<input type="text" id="expenseName" name="expenseName" class="form-control" ng-model="vm.newExpenseName" placeholder="Expense Name" required autofocus>
+<input type="number" id="expenseAmount" name="expenseAmount" class="form-control" ng-model="vm.newExpenseAmount" required autofocus>
+<button type="submit" class="btn btn-primary" ng-click="vm.createExpense()">Ajouter</button>
+<h3>Dépenses</h3>
+<div class="list-group">
+  <a ng-repeat="expense in vm.expenses">
+    <div class="list-group-item">
+      <h4 class="list-group-item-heading" ng-bind="expense.name"></h4>
+      <p class="list-group-item-text pull-right small" ng-bind="expense.userId"></p>
+      <p class="list-group-item-text pull-right small" ng-bind="expense.amount"></p>
+    </div>
+  </a>
+</div>

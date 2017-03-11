@@ -19,6 +19,18 @@
         templateUrl: '/modules/groups/client/views/create-group.client.view.html',
         controller: 'CreateGroupController',
         controllerAs: 'vm'
+      })
+      .state('listGroups', {
+        url: '/groups',
+        templateUrl: '/modules/groups/client/views/list-groups.client.view.html',
+        controller: 'ListGroupsController',
+        controllerAs: 'vm'
+      })
+      .state('groupDetails', {
+        url: '/groups/:groupId',
+        templateUrl: '/modules/groups/client/views/group-details.client.view.html',
+        controller: 'GroupDetailsController',
+        controllerAs: 'vm'
       });
   }
 }());

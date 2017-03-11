@@ -1,0 +1,8 @@
+<h1>Mes groupes</h1>
+<div class="list-group">
+  <a ng-repeat="group in vm.groups" ui-sref="groupDetails({ groupId: group._id })">
+    <div class="list-group-item">
+      <h4 class="list-group-item-heading" ng-bind="group.name"></h4>
+    </div>
+  </a>
+</div>

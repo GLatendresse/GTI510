@@ -23,7 +23,7 @@
     });
     menuService.addSubMenuItem('topbar', 'groups', {
       title: 'Voir mes groupes',
-      state: 'groups.list',
+      state: 'listGroups',
       roles: ['*']
     });
   }
