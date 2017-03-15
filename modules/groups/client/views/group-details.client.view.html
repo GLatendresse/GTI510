@@ -2,26 +2,31 @@
 
 <h3>Membres</h3>
 <div class="list-group">
-  <a ng-repeat="user in vm.users">
-    <div class="list-group-item">
-      <h4 class="list-group-item-heading" ng-bind="user.username"></h4>
-      20 $
-      <p class="list-group-item-text pull-right small" ng-bind="user.email"></p>
-      <button class="btn btn-primary" ng-click="vm.refund(user)">Rembourser</button>
-    </div>
-  </a>
+  <div ng-repeat="user in vm.users" class="list-group-item">
+    <h4 class="list-group-item-heading" ng-bind="user.username"></h4>
+    <div ng-if="user.balance > 0">Vous devez {{user.balance}} $</div>
+    <div ng-if="user.balance === 0">Vous ne devez rien</div>
+    <div ng-if="user.balance < 0">Il vous doit {{user.balance}} $</div>
+    <p class="list-group-item-text pull-right small" ng-bind="user.email"></p>
+    <button ng-if="user.balance > 0" class="btn btn-primary" ng-click="vm.refund(user)">Rembourser</button>
+  </div>
 </div>
 <h3>Ajouter une nouvelle dépense</h3>
 <input type="text" id="expenseName" name="expenseName" class="form-control" ng-model="vm.newExpenseName" placeholder="Expense Name" required autofocus>
 <input type="number" id="expenseAmount" name="expenseAmount" class="form-control" ng-model="vm.newExpenseAmount" required autofocus>
+Payé par:
+<select class="form-control" ng-model="vm.expenseUser" ng-options="user.username for user in vm.selectableUsers"></select>
+<br/>
 <button type="submit" class="btn btn-primary" ng-click="vm.createExpense()">Ajouter</button>
-<h3>Dépenses</h3>
+<h3>Dépenses et remboursements</h3>
 <div class="list-group">
-  <a ng-repeat="expense in vm.expenses">
-    <div class="list-group-item">
-      <h4 class="list-group-item-heading" ng-bind="expense.name"></h4>
-      <p class="list-group-item-text pull-right small" ng-bind="expense.userId"></p>
-      <p class="list-group-item-text pull-right small" ng-bind="expense.amount"></p>
+  <div ng-repeat="transaction in vm.transactions" class="list-group-item">
+    <div class="media">
+      <h2 class="label label-default pull-right">+ ${{ transaction.amount }}</h2>
+      <div class="media-body">
+        <h4 class="media-heading">{{ transaction.name }}</h4>
+        <p>Payé par {{ transaction.user.username }}</p>
+      </div>
     </div>
-  </a>
+  </div>
 </div>

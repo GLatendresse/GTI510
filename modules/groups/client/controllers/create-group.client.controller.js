@@ -5,9 +5,9 @@
     .module('groups')
     .controller('CreateGroupController', CreateGroupController);
 
-  CreateGroupController.$inject = ['UsersService', 'Authentication', '$http'];
+  CreateGroupController.$inject = ['UsersService', 'Authentication', '$http', '$window'];
 
-  function CreateGroupController(UsersService, Authentication, $http) {
+  function CreateGroupController(UsersService, Authentication, $http, $window) {
     var vm = this;
     var users;
     var currentUser;
@@ -40,6 +40,7 @@
       var res = $http.post('/api/groups', group);
       res.success(function(data, status, headers, config) {
         alert('success');
+        $window.location.href = '/groups/' + data._id;
       });
       res.error(function(data, status, headers, config) {
         alert('failure message: ' + JSON.stringify({ data: data }));
