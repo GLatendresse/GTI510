@@ -28,13 +28,13 @@
 
     $stateProvider
       .state('home', {
-        url: '/',
+        url: '/meanjs',
         templateUrl: '/modules/core/client/views/home.client.view.html',
         controller: 'HomeController',
         controllerAs: 'vm'
       })
       .state('balle-de-golf', {
-        url: '/balledegolf',
+        url: '/',
         templateUrl: '/modules/core/client/views/balledegolf.client.view.html',
         controller: 'HomeController',
         controllerAs: 'vm'
