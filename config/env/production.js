@@ -13,7 +13,7 @@ module.exports = {
   // Binding to 127.0.0.1 is safer in production.
   host: process.env.HOST || '0.0.0.0',
   db: {
-    uri: process.env.MONGOHQ_URL || process.env.MONGODB_URI || 'mongodb://user:123456@ds155737.mlab.com:55737/balledegolf',
+    uri: 'mongodb://user:123456@ds155737.mlab.com:55737/balledegolf',
     options: {
       user: '',
       pass: ''
