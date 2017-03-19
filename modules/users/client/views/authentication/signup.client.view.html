@@ -1,56 +1,56 @@
 <div>
-  <h3 class="col-xs-12 text-center">Or sign up using your email</h3>
+  <h3 class="col-xs-12 text-center">Ou enregistrez-vous avec votre courriel</h3>
   <div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4">
     <form name="vm.userForm" ng-submit="vm.signup(vm.userForm.$valid)" class="signin" novalidate autocomplete="off">
       <fieldset>
         <div class="form-group" show-errors>
-          <label for="firstName">First Name</label>
-          <input type="text" id="firstName" name="firstName" class="form-control" ng-model="vm.credentials.firstName" placeholder="First Name" required autofocus>
+          <label for="firstName">Prénom</label>
+          <input type="text" id="firstName" name="firstName" class="form-control" ng-model="vm.credentials.firstName" placeholder="Prénom" required autofocus>
           <div ng-messages="vm.userForm.firstName.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">First name is required.</p>
+            <p class="help-block error-text" ng-message="required">Le prénom est requis.</p>
           </div>
         </div>
         <div class="form-group" show-errors>
-          <label for="lastName">Last Name</label>
-          <input type="text" id="lastName" name="lastName" class="form-control" ng-model="vm.credentials.lastName" placeholder="Last Name" required>
+          <label for="lastName">Nom</label>
+          <input type="text" id="lastName" name="lastName" class="form-control" ng-model="vm.credentials.lastName" placeholder="Nom" required>
           <div ng-messages="vm.userForm.lastName.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Last name is required.</p>
+            <p class="help-block error-text" ng-message="required">Le nom est requis.</p>
           </div>
         </div>
         <div class="form-group" show-errors>
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" class="form-control" ng-model="vm.credentials.email" placeholder="Email" lowercase required>
+          <label for="email">Courriel</label>
+          <input type="email" id="email" name="email" class="form-control" ng-model="vm.credentials.email" placeholder="Courriel" lowercase required>
           <div ng-messages="vm.userForm.email.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Email address is required.</p>
-            <p class="help-block error-text" ng-message="email">Email address is invalid.</p>
+            <p class="help-block error-text" ng-message="required">L'adresse courriel est requise.</p>
+            <p class="help-block error-text" ng-message="email">L'adresse courriel est invalide.</p>
           </div>
         </div>
         <div class="form-group" show-errors>
-          <label for="username">Username</label>
-          <input type="text" id="username" name="username" class="form-control" ng-model="vm.credentials.username" ng-pattern="vm.usernameRegex" placeholder="Username" lowercase required>
+          <label for="username">Nom d'utilisateur</label>
+          <input type="text" id="username" name="username" class="form-control" ng-model="vm.credentials.username" ng-pattern="vm.usernameRegex" placeholder="Nom d'utilisateur" lowercase required>
           <div ng-messages="vm.userForm.username.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Username is required.</p>
-            <p class="help-block error-text" ng-message="pattern">Please enter a valid username: 3+ characters long, non restricted word, characters "_-.", no consecutive dots, does not begin or end with dots, letters a-z and numbers 0-9.</p>
+            <p class="help-block error-text" ng-message="required">Le nom d'utilisateur est requis.</p>
+            <p class="help-block error-text" ng-message="pattern">Veuillez entrer un nom d'utilisateur valide : 3+ caractères, mot non restreint, caractères "_-.", pas de points consécutifs, ne commence ou ne finit pas par un point, lettres a-z et chiffres 0-9.</p>
           </div>
         </div>
         <div class="form-group" show-errors>
-          <label for="password">Password</label>
-            <input type="password" id="password" name="password" class="form-control" ng-model="vm.credentials.password" placeholder="Password" uib-popover="{{vm.getPopoverMsg()}}" popover-trigger="outsideClick" password-validator required>
+          <label for="password">Mot de passe</label>
+            <input type="password" id="password" name="password" class="form-control" ng-model="vm.credentials.password" placeholder="Mot de passe" uib-popover="{{vm.getPopoverMsg()}}" popover-trigger="outsideClick" password-validator required>
           <div ng-messages="vm.userForm.password.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Password is required.</p>
+            <p class="help-block error-text" ng-message="required">Le mot de passe est requis.</p>
             <div ng-repeat="passwordError in passwordErrors">
               <p class="help-block error-text" ng-show="vm.userForm.password.$error.requirements">{{passwordError}}</p>
             </div>
           </div>
         </div>
         <div class="form-group" ng-show="!vm.userForm.password.$error.required">
-          <label>Password Requirements</label>
+          <label>Validité du mot de passe</label>
           <uib-progressbar value="requirementsProgress" type="{{requirementsColor}}"><span style="color:white; white-space:nowrap;">{{requirementsProgress}}%</span></uib-progressbar>
         </div>
         <div class="text-center form-group">
-          <button type="submit" class="btn btn-primary">Sign up</button>
+          <button type="submit" class="btn btn-primary">Inscription</button>
           &nbsp; or&nbsp;
-          <a ui-sref="authentication.signin" class="show-signup">Sign in</a>
+          <a ui-sref="authentication.signin" class="show-signup">Connexion</a>
         </div>
       </fieldset>
     </form>

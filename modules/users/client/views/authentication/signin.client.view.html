@@ -1,5 +1,5 @@
 <div>
-  <h3 class="col-xs-12 text-center">Or with your account</h3>
+  <h3 class="col-xs-12 text-center">Ou avec votre compte</h3>
   <div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4">
     <form name="vm.userForm" ng-submit="vm.signin(vm.userForm.$valid)" class="signin" novalidate autocomplete="off">
       <fieldset>
@@ -7,26 +7,26 @@
           <uib-alert type="danger" ng-show="vm.error" class="text-center text-danger">
             <span ng-bind="vm.error"></span>
           </uib-alert>
-          <label for="usernameOrEmail">Username or Email</label>
-          <input type="text" id="usernameOrEmail" name="usernameOrEmail" class="form-control" ng-model="vm.credentials.usernameOrEmail" placeholder="Username or Email" required autofocus>
+          <label for="usernameOrEmail">Nom d'utilisateur ou courriel</label>
+          <input type="text" id="usernameOrEmail" name="usernameOrEmail" class="form-control" ng-model="vm.credentials.usernameOrEmail" placeholder="Nom d'utilisateur ou courriel" required autofocus>
           <div ng-messages="vm.userForm.usernameOrEmail.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Username or Email is required.</p>
+            <p class="help-block error-text" ng-message="required">Un nom d'utilisateur ou courriel est requis.</p>
           </div>
         </div>
         <div class="form-group" show-errors>
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" class="form-control" ng-model="vm.credentials.password" placeholder="Password" required>
+          <label for="password">Mot de passe</label>
+          <input type="password" id="password" name="password" class="form-control" ng-model="vm.credentials.password" placeholder="Mot de passe" required>
           <div ng-messages="vm.userForm.password.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Password is required.</p>
+            <p class="help-block error-text" ng-message="required">Le mot de passe est requis.</p>
           </div>
         </div>
         <div class="text-center form-group">
-          <button type="submit" class="btn btn-primary">Sign in</button>
+          <button type="submit" class="btn btn-primary">Connexion</button>
           &nbsp; or&nbsp;
-          <a ui-sref="authentication.signup">Sign up</a>
+          <a ui-sref="authentication.signup">Inscription</a>
         </div>
         <div class="text-center forgot-password">
-          <a ui-sref="password.forgot">Forgot your password?</a>
+          <a ui-sref="password.forgot">Mot de passe oublié ?</a>
         </div>
         <br />
       </fieldset>
