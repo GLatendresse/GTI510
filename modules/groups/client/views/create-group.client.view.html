@@ -1,18 +1,20 @@
-<h1>Créer un groupe</h1>
-<input type="text" id="groupName" name="groupName" class="form-control" ng-model="vm.groupName" placeholder="Nom du groupe" required autofocus>
-<h3>Sélectionner usagers</h3>
-<div class="list-group">
-  <div ng-repeat="user in vm.users">
-    <div class="list-group-item" style="background-color:lightblue;" ng-if="user.selected" ng-click="user.selected = false">
-      <h4 class="list-group-item-heading" ng-bind="user.username"></h4>
-      <p class="list-group-item-text pull-right small">{{user.firstName + ' ' + user.lastName}}</p>
-      <p class="list-group-item-text" ng-bind="user.email"></p>
-    </div>
-    <div class="list-group-item" ng-if="!(user.selected)" ng-click="user.selected = true">
-      <h4 class="list-group-item-heading" ng-bind="user.username"></h4>
-      <p class="list-group-item-text pull-right small">{{user.firstName + ' ' + user.lastName}}</p>
-      <p class="list-group-item-text" ng-bind="user.email"></p>
+<form ng-submit="vm.createGroup()">
+  <h1>Créer un groupe</h1>
+  <input type="text" id="groupName" name="groupName" class="form-control" ng-model="vm.groupName" placeholder="Nom du groupe" required autofocus>
+  <h3>Sélectionner usagers</h3>
+  <div class="list-group">
+    <div ng-repeat="user in vm.users">
+      <div class="list-group-item" style="background-color:lightblue;" ng-if="user.selected" ng-click="user.selected = false">
+        <h4 class="list-group-item-heading" ng-bind="user.username"></h4>
+        <p class="list-group-item-text pull-right small">{{user.firstName + ' ' + user.lastName}}</p>
+        <p class="list-group-item-text" ng-bind="user.email"></p>
+      </div>
+      <div class="list-group-item" ng-if="!(user.selected)" ng-click="user.selected = true">
+        <h4 class="list-group-item-heading" ng-bind="user.username"></h4>
+        <p class="list-group-item-text pull-right small">{{user.firstName + ' ' + user.lastName}}</p>
+        <p class="list-group-item-text" ng-bind="user.email"></p>
+      </div>
     </div>
   </div>
-</div>
-<button type="submit" class="btn btn-primary" ng-click="vm.createGroup()">Créer</button>
+  <button type="submit" class="btn btn-primary">Créer</button>
+</form>

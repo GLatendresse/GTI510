@@ -13,14 +13,16 @@
   </div>
 </div>
 <hr style="border-width:2px; border-color:#888888"/>
-<h3>Ajouter une nouvelle dépense</h3>
-Nom de la dépense :
-<input type="text" id="expenseName" name="expenseName" class="form-control custom-form-control" ng-model="vm.newExpenseName" placeholder="Une dépense" required autofocus>
-Montant :
-<input placeholder="100.00" type="number" id="expenseAmount" name="expenseAmount" class="form-control custom-form-control" ng-model="vm.newExpenseAmount" required autofocus>
-Payé par:
-<select class="form-control custom-form-control" ng-model="vm.expenseUser" ng-options="user.username for user in vm.selectableUsers"></select>
-<button style="margin-top:10px" type="submit" class="btn btn-primary" ng-click="vm.createExpense()">Ajouter</button>
+<form ng-submit="vm.createExpense()">
+  <h3>Ajouter une nouvelle dépense</h3>
+  Nom de la dépense :
+  <input type="text" id="expenseName" name="expenseName" class="form-control custom-form-control" ng-model="vm.newExpenseName" placeholder="Une dépense" required autofocus>
+  Montant :
+  <input placeholder="100.00" type="number" id="expenseAmount" name="expenseAmount" class="form-control custom-form-control" ng-model="vm.newExpenseAmount" required autofocus>
+  Payé par:
+  <select class="form-control custom-form-control" ng-model="vm.expenseUser" ng-options="user.username for user in vm.selectableUsers"></select>
+  <button style="margin-top:10px" type="submit" class="btn btn-primary">Ajouter</button>
+</form>
 <h3>Dépenses et remboursements</h3>
 <div class="list-group">
   <div ng-repeat="transaction in vm.transactions" class="list-group-item">
