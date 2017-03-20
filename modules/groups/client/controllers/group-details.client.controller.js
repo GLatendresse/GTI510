@@ -66,12 +66,14 @@
         vm.group = groupsData.find(function(item) {
           return item._id === $stateParams.groupId;
         });
-        users = data;
+        users = data.filter(function(item) {
+          return vm.group.userIds.includes(item._id);
+        });
         currentUser = users.find(function(item) {
           return item.email === Authentication.user.email;
         });
         vm.users = users.filter(function(item) {
-          return vm.group.userIds.includes(item._id) && item._id !== currentUser._id;
+          return item._id !== currentUser._id;
         });
         vm.selectableUsers = users;
         vm.expenseUser = currentUser;
